@@ -2,7 +2,6 @@ const fs = require("fs");
 const http = require("http");
 const express = require("express")
 const cors = require("cors");
-const { resolveObjectURL } = require("buffer");
 
 const app = express();
 app.use(cors({
@@ -10,8 +9,8 @@ app.use(cors({
 }));
 
 
-const _places = JSON.parse(fs.readFileSync("./places.json", "utf-8"));
-const _events = JSON.parse(fs.readFileSync("./events.json", "utf-8"));
+const _places = JSON.parse(fs.readFileSync("./places2.json", "utf-8"));
+const _events = JSON.parse(fs.readFileSync("./events2.json", "utf-8"));
 applyEventPropertiesToPlaces();
 const _placesArr = Object.values(_places);
 
@@ -150,10 +149,20 @@ function decodeIds(num) {
 }
 
 function filterPlaces(interests, wishes) {
+    wishes &= ~(4 | 8 | 16 | 32);
     return _placesArr.filter(place => {
         const placeInterest = place.interests !== undefined ? place.interests : 0;
-        //const placeWishes = place.wishes !== undefined ? place.wishes : 0;
-        return (interests & placeInterest);
+        const placeWishes = place.wishes !== undefined ? place.wishes : 0;
+    
+        const priceWish = wishes & 0b11;
+        const placeWish = wishes & (64|128);
+        const ovzWish = wishes & 256;
+    
+
+
+        return (interests & placeInterest)  // interests 
+            
+                && (priceWish & placeWishes) === priceWish && (placeWish & placeWishes) === placeWish && (ovzWish & placeWishes) === ovzWish; // wishes
     });
 }
 

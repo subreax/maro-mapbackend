@@ -3756,30 +3756,6 @@
         "color": "#F0AF18",
         "icon": "hire"
     },
-    "6040": {
-        "id": 6040,
-        "coordinates": [
-            37.537703265803,
-            55.749888112388
-        ],
-        "title": "Смотровая площадка PANORAMA360",
-        "title_short": "Смотровая площадка PANORAMA360",
-        "color": "#F0AF18",
-        "icon": "entertainment",
-        "interests": 112
-    },
-    "6255": {
-        "id": 6255,
-        "coordinates": [
-            37.545122620045,
-            55.708128515251
-        ],
-        "title": "Московская канатная дорога на Воробьевых горах",
-        "title_short": "Московская канатная дорога на ...",
-        "color": "#F0AF18",
-        "icon": "entertainment",
-        "interests": 112
-    },
     "6313": {
         "id": 6313,
         "coordinates": [
@@ -4502,18 +4478,6 @@
         "icon": "restaurant",
         "interests": 57344,
         "wishes": 322
-    },
-    "9010": {
-        "id": 9010,
-        "coordinates": [
-            37.545669318545,
-            55.708107830592
-        ],
-        "title": "Аттракцион Zipline в экстрим-парке Skypark Moscow",
-        "title_short": "Аттракцион Zipline в экстрим-п...",
-        "color": "#F0AF18",
-        "icon": "entertainment",
-        "interests": 112
     },
     "9021": {
         "id": 9021,
